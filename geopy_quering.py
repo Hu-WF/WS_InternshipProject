@@ -29,17 +29,10 @@ def geo_reverse_coding(latitude, longitude, UA=UA):
     print('location.raw', location.raw)
     return location
 
-# 判断字符串是否为{空、英文、非英文}
-def isEnglish(s):
-    if s=='nan':return 0
-    else:
-        ans = re.search(r"[a-zA-Z\']+$", s)
-        return 1 if ans else 2
-
 #获取geoname_id和lat&lon的索引关系
 def get_geoID():
-    id_v4=pd.read_csv("../data/GeoIP2-City-CSV-part/GeoIP2-City-Blocks-IPv4.csv",encoding='utf-8')
-    id_v6=pd.read_csv("../data/GeoIP2-City-CSV-part/GeoIP2-City-Blocks-IPv6.csv",encoding='utf-8')
+    id_v4=pd.read_csv("../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Blocks-IPv4.csv",encoding='utf-8')
+    id_v6=pd.read_csv("../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Blocks-IPv6.csv",encoding='utf-8')
     print("IPv4_shape=",id_v4.shape,"IPv6_shape=",id_v6.shape)
     #为降低数据量，仅保留geoname_id、latitude、longitude三个特征列来作为索引依据
     bad_cols=['network','registered_country_geoname_id','represented_country_geoname_id','is_anonymous_proxy',
@@ -105,7 +98,7 @@ if __name__ == '__main__':
     #单条转换
     #geo_reverse_coding(latitude='39.956981',longitude='116.375523')#latitude='13.6967',longitude='44.7308'
     #批量转换
-    geoID=get_geoID()#获取IPv4、IPv6的geoname_id -- Lat&Lon关系表
-    data=merge_geoID_data(geoID,)#将表merge到需要逆编码的data中，使data具有lat&lon列
-    batch_geo_reverse_coding(data)#批量进行逆编码
+    # geoID=get_geoID()#获取IPv4、IPv6的geoname_id -- Lat&Lon关系表
+    # data=merge_geoID_data(geoID,)#将表merge到需要逆编码的data中，使data具有lat&lon列
+    # batch_geo_reverse_coding(data)#批量进行逆编码
     get_finall_result()#调整列使其与原始数据data格式一致
