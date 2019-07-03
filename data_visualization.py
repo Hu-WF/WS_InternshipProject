@@ -1,7 +1,14 @@
 #!/usr/bin/env python 3.7
 # -*- coding:utf-8 -*-
-from geopy_quering import isEnglish
+import re
 import pandas as pd
+
+# 判断字符串是否为{空、英文、非英文}
+def isEnglish(s):
+    if s=='nan':return 0
+    else:
+        ans = re.search(r"[a-zA-Z\']+$", s)
+        return 1 if ans else 2
 
 def city_location_ansys(data="../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Locations-en.csv"):
     data=pd.read_csv(data,encoding='utf-8')
