@@ -28,16 +28,16 @@ Make sure that the file is shown below, and then run jinnanMain.py directly:
                   |-GeoIP2-City-Blocks-IPv4.csv  
                   |-GeoIP2-City-Blocks-IPv6.csv  
                   |-GeoIP2-City-Locations-en.csv  
-　　　　　　|-GeoIP2-ISP-CSV  
+          |-GeoIP2-ISP-CSV  
 　　　　　　    |-GeoIP2-ISP-CSV_20190618  
                   |-GeoIP2-ISP-Blocks-IPv4.csv  
                   |-GeoIP2-ISP-Blocks-IPv6.csv  
-　　　　　　|-ipb-ips_raw.str  
-　　　　　　    |-ipb-ips_raw.str  
-　　　　　　    |-ipb-ips_raw.str.md5  
-　　　　　　|-QQ-LocList  
-　　　　　　    |-LocList.xml   
-　　　　|-fileout  
+          |-ipb-ips_raw.str  
+              |-ipb-ips_raw.str  
+              |-ipb-ips_raw.str.md5  
+          |-QQ-LocList  
+              |-LocList.xml   
+          |-fileout  
 　　　　　　|-cnc  
 　　　　　　|-maxmind  
 　　　　　　|-qqloc  
