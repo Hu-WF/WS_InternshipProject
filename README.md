@@ -20,7 +20,7 @@ https://www.wangsu.com/
     `output04_190725_cityname_query.py` :output04的.py版本。  
 
 **4.How-to-run**  
-Make sure that the file is shown below, and then run jinnanMain.py directly:  
+Make sure that the file is shown below, and then run codes in src_ipynb/_py directly:  
 　　|-Project  
 　　　　|-fileout  
 　　　　　　|-cnc  
