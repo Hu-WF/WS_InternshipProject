@@ -22,6 +22,14 @@ https://www.wangsu.com/
 **4.How-to-run**  
 Make sure that the file is shown below, and then run jinnanMain.py directly:  
 　　|-Project  
+　　　　|-fileout  
+　　　　　　|-cnc  
+　　　　　　|-maxmind  
+　　　　　　|-qqloc  
+　　　　|-src_ipynb  
+　　　　　　|-Outputs.ipynb#所有提交的.ipynb类型的output  
+　　　　|-src_py  
+　　　　　　|-Outputs.py#所有提交的.py类型的output  
 　　　　|-data  
 　　　　　　|-GeoIP2-City-CSV  
 　　　　　　　　|-GeoIP2-City-CSV_20190625  
@@ -37,10 +45,4 @@ Make sure that the file is shown below, and then run jinnanMain.py directly:
 　　　　　　　　|-ipb-ips_raw.str.md5  
 　　　　　　|-QQ-LocList  
 　　　　　　　　|-LocList.xml   
-　　　　|-fileout  
-　　　　　　|-cnc  
-　　　　　　|-maxmind  
-　　　　　　|-qqloc  
-　　　　|-src  
-　　　　　　|-Outputs.py\.ipynb#所有提交的output  
 　　　　|-README.md  
