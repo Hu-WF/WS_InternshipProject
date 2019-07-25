@@ -25,22 +25,22 @@ Make sure that the file is shown below, and then run jinnanMain.py directly:
 　　　　|-data  
 　　　　　　|-GeoIP2-City-CSV  
 　　　　　　    |-GeoIP2-City-CSV_20190625  
-                  |-GeoIP2-City-Blocks-IPv4.csv  
-                  |-GeoIP2-City-Blocks-IPv6.csv  
-                  |-GeoIP2-City-Locations-en.csv  
-          |-GeoIP2-ISP-CSV  
-　　　　　　    |-GeoIP2-ISP-CSV_20190618  
-                  |-GeoIP2-ISP-Blocks-IPv4.csv  
-                  |-GeoIP2-ISP-Blocks-IPv6.csv  
-          |-ipb-ips_raw.str  
-              |-ipb-ips_raw.str  
-              |-ipb-ips_raw.str.md5  
-          |-QQ-LocList  
-              |-LocList.xml   
-          |-fileout  
+　　　　　　　　　　|-GeoIP2-City-Blocks-IPv4.csv  
+　　　　　　　　　　|-GeoIP2-City-Blocks-IPv6.csv  
+　　　　　　　　　　|-GeoIP2-City-Locations-en.csv  
+　　　　　　|-GeoIP2-ISP-CSV  
+　　　　　　　　|-GeoIP2-ISP-CSV_20190618  
+　　　　　　　　　　|-GeoIP2-ISP-Blocks-IPv4.csv  
+　　　　　　　　　　|-GeoIP2-ISP-Blocks-IPv6.csv  
+　　　　　　|-ipb-ips_raw.str  
+　　　　　　　　|-ipb-ips_raw.str  
+　　　　　　　　|-ipb-ips_raw.str.md5  
+　　　　　　|-QQ-LocList  
+　　　　　　　　|-LocList.xml   
+　　　　|-fileout  
 　　　　　　|-cnc  
 　　　　　　|-maxmind  
 　　　　　　|-qqloc  
 　　　　|-src  
-　　　　　　|-Outputs.py\.ipynb  
+　　　　　　|-Outputs.py\.ipynb#所有提交的output  
 　　　　|-README.md  
