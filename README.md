@@ -24,7 +24,7 @@ Make sure that the file is shown below, and then run jinnanMain.py directly:
 　　|-Project  
 　　　　|-data  
 　　　　　　|-GeoIP2-City-CSV  
-　　　　　　    |-GeoIP2-City-CSV_20190625  
+　　　　　　　　|-GeoIP2-City-CSV_20190625  
 　　　　　　　　　　|-GeoIP2-City-Blocks-IPv4.csv  
 　　　　　　　　　　|-GeoIP2-City-Blocks-IPv6.csv  
 　　　　　　　　　　|-GeoIP2-City-Locations-en.csv  
