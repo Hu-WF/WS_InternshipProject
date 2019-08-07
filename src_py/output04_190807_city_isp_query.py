@@ -21,7 +21,7 @@ class BaseQuery():
             iptail_mid = database['<IPTAIL>'][mid]
             iphead_mid = database['<IPHEAD>'][mid]
             if IP(iptail_mid) >= IP(ip) and IP(iphead_mid) <= IP(ip):
-                print('CNC query result：', database[query_target][mid])
+                print('CNC：', database[query_target][mid])
                 return database[query_target][mid]
             elif IP(iptail_mid) >= IP(ip) and IP(iphead_mid) >= IP(ip):
                 high = mid - 1
@@ -39,7 +39,7 @@ class BaseQuery():
                 mid = (low + high) // 2
                 ip_mid = database['network'][mid]
                 if IP(ip) in IP(ip_mid):
-                    print('MaxMind query result：', database[query_target][mid])
+                    print('MaxMind：', database[query_target][mid])
                     return database[query_target][mid]
                 elif IP(ip_mid) >= IP(ip):
                     high = mid - 1
@@ -205,22 +205,45 @@ class ISPQuery(BaseQuery):
                 self.cnc_isp_query(cnc, ip)
                 self.maxmind_isp_query(maxmind, ip)
 
+def query_in_console():
+    """在控制台输入ip地址，同时进行city_name和ISP查询"""
+    cq=CitynameQuery()
+    iq=ISPQuery()
+    print('Loading data...')
+    cnc_city,maxmind_city=cq.load_citynameDatabase_faster()
+    cnc_isp,maxmind_isp=iq.load_ispdatabase_faster()
+    while True:
+        print('='*50)
+        ip=str(input('Input IP to query city_name and ISP,or press q/Q to quit:'))
+        if ip == 'q' or ip == 'Q':
+            break
+        else:
+            print('city_name:')
+            cq.cnc_city_query(cnc_city,ip)#cnc city
+            cq.maxmind_city_query(maxmind_city,ip)#maxmind city
+            print('ISP:')
+            iq.cnc_isp_query(cnc_isp,ip)#cnc isp
+            iq.maxmind_isp_query(maxmind_isp,ip)#maxmind isp
+
 
 if __name__ == '__main__':
     '''city_name查询'''
-    cq = CitynameQuery()
-    cnc, maxmind = cq.load_citynameDatabase_faster()  # 载入cnc和maxmind city_name数据库
+    # cq = CitynameQuery()
+    # cnc, maxmind = cq.load_citynameDatabase_faster()  # 载入cnc和maxmind city_name数据库
     # 方式1：以控制台输入ip地址的方式查询，如输入1.2.2.0
-    cq.console_quering(cnc, maxmind)
+    # cq.console_quering(cnc, maxmind)
     # 方式2：调用api查询
     # cq.cnc_city_query(cnc,ip='1.0.0.0')
     # cq.maxmind_city_query(maxmind,ip='1.0.0.0')
 
     '''ISP查询'''
-    iq = ISPQuery()
-    cnc, maxmind = iq.load_ispdatabase_faster()  # 载入cnc和maxmind ISP数据库
+    # iq = ISPQuery()
+    # cnc, maxmind = iq.load_ispdatabase_faster()  # 载入cnc和maxmind ISP数据库
     # 方式1：以控制台输入ip地址的方式查询
-    iq.console_quering(cnc, maxmind)
+    # iq.console_quering(cnc, maxmind)
     # 方式2，调用api查询
     # iq.cnc_isp_query(cnc,ip='1.0.0.0')
     # iq.maxmind_isp_query(maxmind,ip='1.0.0.0')
+
+    '''city_name和ISP同时查询'''
+    query_in_console()
