@@ -1,6 +1,5 @@
-### 2019/06/25-09/01 WS实习
-工作职责：IP库数据分析、数据挖掘  
-实习期间所有代码提交Outputs（无涉密）
+### 2019/06/25-09/01 WS internship
+All outputs during internship  
 
 **1.URL**  
 https://www.wangsu.com/
