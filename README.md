@@ -1,12 +1,8 @@
 ### 2019/06/25-09/01 WS internship
 All outputs during internship  
 
----
-
 **1.URL**  
 https://www.wangsu.com/
-
----
 
 **2.Requirements**  
 - python >= 3.X  
@@ -17,8 +13,6 @@ https://www.wangsu.com/
 - numpy  
 - scipy  
 
----
-
 **3.Code in src_temp**  
     `output02_190704_geo_inverse_coding.py` :通过地理逆编码完成MaxMind的300+个异常city_name的批量爬取与替换。  
     `output03_190722_geoip_evaluation.py` :对CNC、MaxMind和qqLocList三个库进行初步分析。  
@@ -26,12 +20,8 @@ https://www.wangsu.com/
     `output05_190812_cnc_expand.py` :通过MaxMind为CNC扩充多个key-value。  
     `output06_190819_generate_fsn.py` :通过CNC和MaxMind生成city_name的FSN标准库，并导出IP-FSN查询库。  
 
----
-
 **3.Code in src_final**  
     `generate_fsn.py` :通过CNC和MaxMind生成city_name的FSN标准库，并导出IP-FSN查询库。 
-
----
 
 **4.How-to-run**  
 Make sure that the file is shown below, and then run codes in src_ipynb/_py directly:  
