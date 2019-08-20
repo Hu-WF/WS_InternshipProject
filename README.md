@@ -20,10 +20,10 @@ https://www.wangsu.com/
     `output05_190812_cnc_expand.py` :通过MaxMind为CNC扩充多个key-value。  
     `output06_190819_generate_fsn.py` :通过CNC和MaxMind生成city_name的FSN标准库，并导出IP-FSN查询库。  
 
-**3.Code in src_final**  
+**4.Code in src_final**  
     `generate_fsn.py` :通过CNC和MaxMind生成city_name的FSN标准库，并导出IP-FSN查询库。 
 
-**4.How-to-run**  
+**5.How-to-run**  
 Make sure that the file is shown below, and then run codes in src_ipynb/_py directly:  
 　　|-Project  
 　　　　|-fileout  
