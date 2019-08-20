@@ -1,0 +1,45 @@
+城市名FSN生成与处理模块说明文档 --HuWF --20190819
+
+
+Problem Description
+模块总体功能：通过CNC和MaxMind两个GeoIP库，导出城市名FSN标准表，并将其合并入CNC和MaxMind中作为新字段供查询。
+程序和数据的组织格式如下：
+	|-data
+		|-GeoIP2-City-CSV
+			|-GeoIP2-City-CSV_20190625
+				|-GeoIP2-City-Blocks-IPv4.csv
+				|-GeoIP2-City-Blocks-IPv6.csv
+				|-GeoIP2-City-Locations-en.csv
+		|-ipb-ips_raw.str
+			|-ipb-ips_raw.str
+	|-src
+		|-generate_fsn.py
+		|- GenerateFSN  # 通过MaxMind和CNC生成FSN标准表；
+		|- FSNProcessing  # 将FSN与IP段联合到一起；
+		|- generate_fsn_fsnip  #调用两个类同时完成以上功能。
+	|-fileout
+也可直接将ipb-ips_raw.str、GeoIP2-City-Blocks-IPv4.csv、GeoIP2-City-Blocks-IPv6.csv和GeoIP2-City-Locations-en.csv文件放在data文件夹内，中间文件夹不是必要的。
+
+
+Input
+外部接口函数为：generate_fsn_fsnip(cnc_ips_path, maxmind_city_path,maxmind_IPv4_path, maxmind_IPv6_path, ignore_fsnip=False)
+调用并传递相应参数。其中前4个参数依次为CNC和MaxMind文件的路径，ignore_fsnip参数默认值为False。若设置ignore_fsnip参数为True，则程序只运行GenerateFSN类，否则默认同时运行GenerateFSN和FSNProcessing。
+
+
+Output
+默认在fileout文件夹中输出FSN_date.csv和FSN_with_IP_date.csv，其中date为运行程序时的日期。FSN.csv为通过CNC和MaxMind导出的城市名FSN标准库，FSN_with_IP.csv为key=<IPHEAD>-<IPTAIL>（来自CNC和MaxMind），value=FSN的表。
+若设置ignore_fsnip=True，则只输出FSN.csv。
+
+
+Sample Input
+>>>from generate_fsn import generate_fsn_fsnip
+>>>generate_fsn_fsnip( cnc_ips_path='../data/ipb-ips_raw.str/ipb-ips_raw.str',
+maxmind_city_path='../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Locations-en.csv',
+maxmind_IPv4_path='../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Blocks-IPv4.csv',
+maxmind_IPv6_path='../data/GeoIP2-City-CSV/GeoIP2-City-CSV_20190625/GeoIP2-City-Blocks-IPv6.csv',
+ignore_fsnip=False)
+
+
+Sample Output
+The generated std FSN is in the following file path:’../fileout/FSN_2019-06-25.csv.
+The generated FSN_with_IP is in the following file path:’../fileout/FSN_with_IP_2019-06-25.csv.
